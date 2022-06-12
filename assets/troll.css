@@ -1,0 +1,15 @@
+a{text-decoration:none}
+body{background-color:#A9B4DF;font-family:sans-serif;margin:0}
+details{font-family:serif;margin:0 0 3px 5px}
+h1::before{content:"🗟";background-color:#FFF;padding:10px}
+h1{margin-left:10px}
+h2 a{font-size:small}
+h2{margin-block-start:0;margin-left:5px}
+header,footer{background-color:#C9D4FF;width:100%}
+main{columns:auto 3}
+q,time{float:right;font-size:small;margin-block-start:2px;margin-right:5px}
+q::before{content:"© "}
+section{background-color:#FFF}
+section{display:inline-block;margin:0 0 10px 10px;width:600px}
+time::before{content:"𝍄 "}
+

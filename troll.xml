@@ -1,0 +1,17 @@
+<config>
+  <feed>http://rss.slashdot.org/Slashdot/slashdotMain</feed>
+  <feed>https://blog.fefe.de/rss.xml?html</feed>
+  <feed>https://rss.golem.de/rss.php?feed=ATOM1.0</feed>
+  <feed>https://www.heise.de/newsticker/heise-atom.xml</feed>
+  <feed>https://www.heise.de/security/rss/news-atom.xml</feed>
+  <feed>https://www.sneakerfiles.com/feed/</feed>
+  <feed>https://www.spiegel.de/index.rss</feed>
+  <feed>https://www.tagesschau.de/xml/rss2/</feed>
+  <feed>https://www.taz.de/rss.xml</feed>
+  <feed>https://www.zdf.de/rss/zdf/nachrichten</feed>
+</config>
+
+<!--
+<feed>https://www.jwz.org/blog/feed/</feed>
+<feed>https://xkcd.com/rss.xml</feed>
+-->
