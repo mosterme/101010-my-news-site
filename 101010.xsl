@@ -1,6 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://my.netscape.com/rdf/simple/0.9/" xmlns:rss="http://purl.org/rss/1.0/" xmlns:troll="http://random.pwnz.org" exclude-result-prefixes="troll">
-	<!-- also see  https://www.saxonica.com/saxon-js/index.xml -->
-	<!-- or do saxon -xsl:troll.xsl -s:troll.xml -o:troll.html -->
+	<!-- also see https://www.saxonica.com/saxon-js/index.xml or -->
+	<!-- do   saxon -xsl:101010.xsl -s:config.xml -o:output.html -->
 	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="title" select="'101010 - my news site'"/>
 	<xsl:variable name="path" select="'assets'"/> <!-- path to assets -->
