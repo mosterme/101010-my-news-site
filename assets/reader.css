@@ -1,0 +1,10 @@
+body>footer{border-top:2px solid;bottom:0;position:fixed;padding:2px 0;text-align:center}
+body>header>h1{margin-block-start:0;margin-block-end:0}
+body>header{border-bottom:2px solid;margin:0;position:fixed}
+h1{margin-left:10px}
+main{columns: auto 2;margin:auto;padding-bottom:40px;padding-top:60px;max-width:1280px}
+section{border:1px solid;border-radius:5px;display:inline-block;margin:10px;max-width:600px;min-width:600px}
+
+@media only screen and (max-width:1280px){
+    main{columns: unset;max-width:640px}
+}

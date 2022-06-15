@@ -1,0 +1,17 @@
+article{border:1px solid;border-radius:5px;margin:3px auto;max-height:600px;overflow:auto;padding:3px;width:95%}
+article img{max-width:100%!important;height:auto!important}
+a{text-decoration:none}
+body{font-family:sans-serif;margin:0}
+body>header>h1>span{margin-right:10px}
+details{font-family:serif;margin:3px 5px}
+details summary{cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+header,footer{width:100%}
+h2{margin-block-start:0;margin-left:5px}
+h2 a{font-size:small}
+q,time{float:right;font-size:small;margin-block-start:2px;margin-right:5px}
+q::before{content:"© "}
+time::before{content:"𝍄 "}
+
+/* remove some obnoxious ad blocks */
+.cta{display: none}
+iframe{display:none}

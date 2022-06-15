@@ -1,0 +1,6 @@
+article{background-color:#fff}
+body{background-color:#ddd}
+main{background-color:#ddd;border-color:#ddd!important}
+body>footer{background-color:#fff;border-color:#ddd!important}
+body>header{background-color:#fff;border-color:#ddd!important}
+section{background-color:#fff;border-color:#ddd!important}
