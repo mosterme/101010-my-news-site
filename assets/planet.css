@@ -1,17 +1,12 @@
-article img{max-width:100%!important;height:auto!important}
-article{border:1px solid;border-radius:5px;margin:3px auto;padding:3px 10px;width:95%}
-a{text-decoration:none}
-body>header{border-right:3px solid;border-left:3px solid;width:90%;margin:10px auto;text-align:center;border-radius:30px 0 0 0;border-top:5px solid}
-body>footer{border-right:3px solid;border-left:3px solid;width:90%;margin:10px auto;padding:2px 0;text-align: center}
-body>main{  border-right:3px solid;border-left:3px solid;width:90%;margin:3px  auto;padding:5px 0}
-body{font-family:sans-serif;margin:0}
-details{font-family:serif;margin:0 0 3px 5px}
-h1::before{content:"🌍"} /* 🌎 🌍 🌏*/
+body>footer{border-right:3px solid;border-left:3px solid;width:90%;margin:10px auto;padding:2px 0;text-align:center}
+body>header{border-right:3px solid;border-left:3px solid;width:90%;margin:10px auto;border-top:5px solid;border-radius:30px 30px 0 0;text-align:center}
+body>main{border-right:3px solid;border-left:3px solid;width:90%;margin:3px auto;padding:5px 0}
 h1{margin-left:10px;margin-block-start:3px;margin-block-end:3px;padding-bottom:4px}
-h2 a{font-size:small}
-h2{margin-block-end:0;margin-left:5px}
-header,footer{width:100%}
-q,time{float:right;font-size:small;margin-block-start:2px;margin-right:5px}
-q::before{content:"© "}
 section{margin:0 auto 10px auto;width:80%}
-time::before{content:"𝍄 "}
+time{margin-block-start:25px;margin-right:25px}
+body>header>h1>span{display:none}
+
+@media only screen and (max-width:900px){
+    body{background: repeating-linear-gradient(#044, #044 1px, #066 1px, #066 2px)}
+    body>header{border-top-right-radius:0}
+}
