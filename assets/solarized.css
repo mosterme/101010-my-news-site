@@ -1,0 +1,12 @@
+/* https://ethanschoonover.com/solarized/ */
+
+a{color:#268bd2} a:active{color:#d33682} a:visited{color:#6c71c4}
+footer,header,main{background-color:#859900;border-color:#859900!important;color:#fdf6e3}
+main footer,main header{background-color:#b58900}
+article,section{background-color:#fdf6e3;border-color:#b58900!important}
+body,main{background-color:#eee8d5;color:#657b83}
+
+@media (prefers-color-scheme: dark) {
+    article,section{background-color:#073642}
+    body,main{background-color:#002b36;color:#839496}
+}
