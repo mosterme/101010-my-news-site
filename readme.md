@@ -2,7 +2,7 @@
 
 A simple news aggregator website. Intended to be a spiritual successor to sites like [mynewssite.org](https://web.archive.org/web/*/mynewssite.org).
 
-![flat reader](./assets/./img/flat-reader.png)
-![blue 101010](./assets/./img/blue-101010.png)
+![flat reader](./assets/img/flat-reader.png)
+![blue 101010](./assets/img/blue-101010.png)
 
 > Proudly made *without* Docker, JavaScript, PHP, Python, MySQL or PostgreSQL.
