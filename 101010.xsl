@@ -32,7 +32,7 @@
 				<footer id="f">
 					<a href="#about">about</a> | <a href="#config">config</a> | help
 				</footer>
-				<div id="about" class="overlay"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#f">×</a><center class="content"><p>A simple news aggregator website, inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="http://mosterme.github.io/101010/assets/img/blue-101010.png" alt="blue 101010"/></p><p>Proudly made <em>without</em> Docker, JavaScript, PHP, Python, MySQL or PostgreSQL.</p></center></div></div>
+				<div id="about" class="overlay"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#f">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="http://mosterme.github.io/101010/assets/img/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></div>
 				<div id="config" class="overlay"><div class="popup"><h2>config.xml</h2><a class="close" href="#f">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre></div></div>
 			</body>
 		</html>

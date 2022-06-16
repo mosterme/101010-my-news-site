@@ -1,8 +1,8 @@
 # 101010 - my news site
 
-A simple news aggregator website. Intended to be a spiritual successor to sites like [mynewssite.org](https://web.archive.org/web/*/mynewssite.org).
+a simple news aggregator website, inspired by old sites like [mynewssite.org](https://web.archive.org/web/*/mynewssite.org).
 
 ![flat reader](./assets/img/flat-reader.png)
 ![blue 101010](./assets/img/blue-101010.png)
 
-> Proudly made *without* Docker, JavaScript, PHP, Python, MySQL or PostgreSQL.
+> proudly made *without* docker, javascript, php, python, mysql or postgresql.
