@@ -1,4 +1,4 @@
-<config max="10" icon="🛸" color="blue.css" style="101010.css">
+<config max="10" icon="📰" color="blue.css" style="101010.css">
   <feed max="1">https://xkcd.com/rss.xml</feed>
   <feed>https://www.taz.de/rss.xml</feed>
   <feed>https://blog.fefe.de/rss.xml?html</feed>
