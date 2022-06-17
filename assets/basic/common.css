@@ -6,21 +6,23 @@ body>header>h1>span{margin-right:10px}
 details{font-family:serif;margin:3px 5px}
 details summary{cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 header,footer{width:100%}
+header h2 a{font-size:small}
 h2{margin-block-start:0;margin-left:5px}
-h2 a{font-size:small}
 q,time{float:right;font-size:small;margin-block-start:2px;margin-right:5px}
 q::before{content:"© "}
 time::before{content:"𝍄 "}
+
+/* disable nav */
+menu{display:none}
 
 /* remove some obnoxious ad blocks */
 .cta{display: none}
 iframe{display:none}
 
 /* popup overlay */
-.overlay {position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0, 0, 0, 0.7);transition:opacity 500ms;visibility:hidden;opacity:0}
-.overlay:target{visibility:visible;opacity:1}
+aside {position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0, 0, 0, 0.7);transition:opacity 500ms;visibility:hidden;opacity:0}
+aside:target{visibility:visible;opacity:1}
 .popup {margin:70px auto;padding:20px;background:#fff;border-radius:5px;width:30%;position:relative;transition:all 5s ease-in-out}
-.popup h2 {color: #333}
 .popup .close {position:absolute;top:20px;right:30px;transition:all 200ms;font-size:30px;font-weight:bold;text-decoration:none;color:#333}
 .popup .close:hover {color:#dc322f}
 .popup .content {max-height:30%;overflow:auto}

@@ -1,5 +1,5 @@
 body>footer{margin: 10px 0;padding:2px 0;text-align:center}
-h1::before{content:"🗟";padding: 5px 5px 0 5px} body>header>h1>span{display:none}
+h1::before{content:"🗟";padding: 5px 5px 0 5px} .hi{display:none}
 h1{margin-block-end:10px;margin-left:10px}
 main{columns: auto 3;margin:auto;padding:0;max-width:1920px}
 section{display:inline-block;margin:10px;width:600px}

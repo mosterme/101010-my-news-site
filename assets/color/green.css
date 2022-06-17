@@ -7,4 +7,4 @@ footer{background-color:#066;color:#fff}
 header{background-color:#066;color:#fff}
 main{background-color:#eee;color:#044}
 section{background-color:#fff}
-h2 a{color:#aaa}
+footer a, header h2 a{color:#ccc}

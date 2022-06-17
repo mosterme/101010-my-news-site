@@ -1,0 +1,8 @@
+body>footer{padding:5px;text-align:center;width:unset;position: fixed; bottom:3%; left:6%}
+body>header{border-right:3px solid;border-left:3px solid;width:90%;position:fixed;top:5px;left:5%}
+body>main{border:3px solid;width:90%;margin:5px auto;padding:5px 0;position:fixed;top:45px;left:5%;bottom:8px;overflow:scroll}
+h1{margin-left:10px;margin-block-start:3px;margin-block-end:3px;padding-bottom:4px} .hi{display:none}
+menu {display:block!important;float:left;padding-inline-start:10px;position:fixed;top:55px;width:160px}
+section{margin:0 5px 5px 180px}
+
+::-webkit-scrollbar{height: 1px;width:1px}
