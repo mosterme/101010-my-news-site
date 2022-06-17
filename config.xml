@@ -1,4 +1,10 @@
-<config max="10" icon="📰" color="blue.css" style="101010.css">
+<!--
+  max   : number of items displayed for each feed.  (can be set globally and/or per feed)
+  icon  : emoji or unicode character. used as favicon and logo. (e.g. 🌍 📰 👓 🛸 🛰️ 🚀)
+  color : css file from ./assets/color/  (blue.css, green.css, flat.css or solarized.css)
+  theme : css file from ./assets/theme/ (101010.css, planet.css, reader.css or slash.css)
+-->
+<config max="10" icon="📰" color="blue.css" theme="101010.css">
   <feed max="1">https://xkcd.com/rss.xml</feed>
   <feed>https://www.taz.de/rss.xml</feed>
   <feed>https://blog.fefe.de/rss.xml?html</feed>
