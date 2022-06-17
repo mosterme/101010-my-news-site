@@ -3,37 +3,37 @@
 	<!-- do   saxon -xsl:101010.xsl -s:config.xml -o:output.html -->
 	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="title" select="'101010 - my news site'"/>
+	<xsl:variable name="basic" select="'common.css'"/>
 	<xsl:variable name="path" select="'assets'"/> <!-- path to assets -->
 	<xsl:variable name="home" select="'𝓗'"/> <!-- ℍ 𝓗 ⌂ 🗟 -->
 	<xsl:variable name="feed" select="'𝓕'"/> <!-- 𝔽 𝓕 -->
 	<xsl:variable name="icon"  select="troll:fallback(//config/@icon,'📰')"/> <!-- 🌎 🌍 🌏 📰 👓 🛸 🛰️ 🚀 -->
 	<xsl:variable name="color" select="troll:fallback(//config/@color,'blue.css')"/>
-	<xsl:variable name="style" select="troll:fallback(//config/@style,'101010.css')"/>
+	<xsl:variable name="theme" select="troll:fallback(//config/@theme,'101010.css')"/>
 	<xsl:variable name="count" select="troll:fallback(//config/@max,10)"/>
-	<xsl:variable name="basic" select="'common.css'"/>
 
 	<xsl:template match="/">
 		<html>
 			<head>
 				<title><xsl:value-of select="$title"/> - <xsl:value-of select="format-time(current-time(), '[H01]:[m01]:[s01]')"/></title>
-				<link rel="stylesheet" type="text/css" href="{$path}/{$basic}"/>
-				<link rel="stylesheet" type="text/css" href="{$path}/{$color}"/>
-				<link rel="stylesheet" type="text/css" href="{$path}/{$style}"/>
+				<link rel="stylesheet" type="text/css" href="{$path}/basic/{$basic}"/>
+				<link rel="stylesheet" type="text/css" href="{$path}/color/{$color}"/>
+				<link rel="stylesheet" type="text/css" href="{$path}/theme/{$theme}"/>
 				<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg'>&lt;text y='26' font-size='26'>{$icon}&lt;/text>&lt;/svg>"/>
 			</head>
 			<body>
 				<header>
 					<time><xsl:value-of select="format-time(current-time(), '[H01]:[m01]:[s01]')"/></time>
-					<h1><span><xsl:value-of select="$icon"/></span> <xsl:value-of select="$title"/></h1>
+					<h1><span class="hi"><xsl:value-of select="$icon"/></span> <span class="ht"><xsl:value-of select="$title"/></span></h1>
 				</header>
 				<main>
+					<menu><xsl:apply-templates mode="menu"/></menu>
 					<xsl:apply-templates/>
 				</main>
-				<footer id="f">
-					<a href="#about">about</a> | <a href="#config">config</a> | help
-				</footer>
-				<div id="about" class="overlay"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#f">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="http://mosterme.github.io/101010/assets/img/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></div>
-				<div id="config" class="overlay"><div class="popup"><h2>config.xml</h2><a class="close" href="#f">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre></div></div>
+				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
+				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="./assets/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
+				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre></div></aside>
+				<aside id="help"><div class="popup"><h2>Check the <a href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li></ul></div></aside>
 			</body>
 		</html>
 	</xsl:template>
@@ -44,11 +44,12 @@
 			<xsl:variable name="copy"  select="document(.)/atom:feed/atom:rights|document(.)//copyright|document(.)//rdf:copyright|document(.)//rss:copyright|document(.)//dc:rights"/>
 			<xsl:variable name="desc"  select="document(.)/atom:feed/atom:subtitle|document(.)//channel/description|document(.)//rdf:channel/rdf:description|document(.)//rss:channel/rss:description"/>
 			<xsl:variable name="link"  select="document(.)/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|document(.)//channel/link|document(.)//rdf:channel/rdf:link|document(.)//rss:channel/rss:link"/>
+			<xsl:attribute name="id" select="generate-id($link)"/>
 			<header>
 				<h2><xsl:attribute name="title" select="$desc"/>
 					<xsl:value-of select="$title"/><xsl:text> </xsl:text>
-					<xsl:call-template name="troll:link"><xsl:with-param name="url" select="$link"/><xsl:with-param name="txt" select="$home"/></xsl:call-template>
-					<xsl:call-template name="troll:link"><xsl:with-param name="url" select="."/><xsl:with-param name="txt" select="$feed"/></xsl:call-template>
+					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$home"/></a>
+					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="."/><xsl:value-of select="$feed"/></a>
 				</h2>
 			</header>
 			<xsl:apply-templates select="document(.)//atom:entry|document(.)//item|document(.)//rdf:item|document(.)//rss:item">
@@ -56,6 +57,14 @@
 			</xsl:apply-templates>
 			<footer>&#160;<q><xsl:value-of select="troll:fallback($copy,$title)"/>&#160;</q></footer>
 		</section>
+	</xsl:template>
+
+	<xsl:template match="feed" mode="menu">
+		<li><a>
+			<xsl:variable name="title" select="document(.)/atom:feed/atom:title|document(.)//channel/title|document(.)//rdf:channel/rdf:title|document(.)//rss:channel/rss:title"/>
+			<xsl:variable name="link"  select="document(.)/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|document(.)//channel/link|document(.)//rdf:channel/rdf:link|document(.)//rss:channel/rss:link"/>
+			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="troll:fallback(substring-before($title, ' - '), $title)"/>
+		</a></li>
 	</xsl:template>
 
 	<xsl:template match="atom:entry|item|rss:item|rdf:item">
@@ -66,8 +75,8 @@
 			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
-					<xsl:call-template name="troll:link"><xsl:with-param name="url" select="$link"/><xsl:with-param name="txt" select="$title"/></xsl:call-template>
-					<xsl:text> </xsl:text><span><xsl:value-of select="substring-after(troll:strip($text),substring-before($title,'...'))"/></span>
+					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$title"/></a>
+					<xsl:text> </xsl:text><span><xsl:value-of select="substring-after(replace($text, '&lt;[^&gt;]*&gt;', ''),substring-before($title,'...'))"/></span>
 				</summary>
 				<article><xsl:if test="$max = 1"><xsl:attribute name="style" select="'text-align:center'"/></xsl:if>
 					<xsl:value-of select="$text" disable-output-escaping="yes"/>
@@ -85,15 +94,6 @@
 			<xsl:when test="$fall != ''"><xsl:value-of select="$fall" disable-output-escaping="yes"/></xsl:when>
 			<xsl:otherwise><xsl:value-of select="$back" disable-output-escaping="yes"/></xsl:otherwise>
 		</xsl:choose>
-	</xsl:function>
-
-	<xsl:template name="troll:link">
-		<xsl:param name="url"/> <xsl:param name="txt"/>
-		<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href"><xsl:value-of select="$url"/></xsl:attribute><xsl:value-of select="$txt" /></a>
-	</xsl:template>
-
-	<xsl:function name="troll:strip">
-		<xsl:param name="value"/> <xsl:value-of select="replace($value, '&lt;[^&gt;]*&gt;', '')"/>
 	</xsl:function>
 
 </xsl:stylesheet>
