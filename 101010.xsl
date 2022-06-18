@@ -100,15 +100,15 @@
 		<xsl:if test="//config/@beta">
 			<form class="content">
 				<script>function swap(name, sheet) { document.getElementById(name).setAttribute("href", "./assets/" + name + "/" + sheet) }</script>
-				<br/><hr/><br/> color = 
-				<select onchange="swap('color', this.value)">
+				<br/><hr/><br/> <label for="color">color = </label>
+				<select name="color" onchange="swap('color', this.value)">
 					<option><xsl:if test="$color = 'blue.css'"><xsl:attribute name="selected"/></xsl:if>blue.css</option>
 					<option><xsl:if test="$color = 'flat.css'"><xsl:attribute name="selected"/></xsl:if>flat.css</option>
 					<option><xsl:if test="$color = 'green.css'"><xsl:attribute name="selected"/></xsl:if>green.css</option>
 					<option><xsl:if test="$color = 'solarized.css'"><xsl:attribute name="selected"/></xsl:if>solarized.css</option>
 				</select>
-				&#160;&#160;&#160; theme = 
-				<select onchange="swap('theme', this.value)">
+				&#160;&#160;&#160; <label for="theme">theme = </label>
+				<select name="theme" onchange="swap('theme', this.value)">
 					<option><xsl:if test="$theme = '101010.css'"><xsl:attribute name="selected"/></xsl:if>101010.css</option>
 					<option><xsl:if test="$theme = 'planet.css'"><xsl:attribute name="selected"/></xsl:if>planet.css</option>
 					<option><xsl:if test="$theme = 'reader.css'"><xsl:attribute name="selected"/></xsl:if>reader.css</option>
