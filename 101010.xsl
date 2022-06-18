@@ -16,9 +16,9 @@
 		<html>
 			<head>
 				<title><xsl:value-of select="$title"/> - <xsl:value-of select="format-time(current-time(), '[H01]:[m01]:[s01]')"/></title>
-				<link rel="stylesheet" type="text/css" href="{$path}/basic/{$basic}"/>
-				<link rel="stylesheet" type="text/css" href="{$path}/color/{$color}"/>
-				<link rel="stylesheet" type="text/css" href="{$path}/theme/{$theme}"/>
+				<link rel="stylesheet" type="text/css" id="basic" href="{$path}/basic/{$basic}"/>
+				<link rel="stylesheet" type="text/css" id="color" href="{$path}/color/{$color}"/>
+				<link rel="stylesheet" type="text/css" id="theme" href="{$path}/theme/{$theme}"/>
 				<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg'>&lt;text y='26' font-size='26'>{$icon}&lt;/text>&lt;/svg>"/>
 			</head>
 			<body>
@@ -32,7 +32,7 @@
 				</main>
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
 				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="./assets/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
-				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre></div></aside>
+				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre><xsl:call-template name="troll:options"/></div></aside>
 				<aside id="help"><div class="popup"><h2>Check the <a href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li></ul></div></aside>
 			</body>
 		</html>
@@ -96,4 +96,25 @@
 		</xsl:choose>
 	</xsl:function>
 
+	<xsl:template name="troll:options">
+		<xsl:if test="//config/@beta">
+			<form class="content">
+				<script>function swap(name, sheet) { document.getElementById(name).setAttribute("href", "./assets/" + name + "/" + sheet) }</script>
+				<br/><hr/><br/> color = 
+				<select onchange="swap('color', this.value)">
+					<option><xsl:if test="$color = 'blue.css'"><xsl:attribute name="selected"/></xsl:if>blue.css</option>
+					<option><xsl:if test="$color = 'flat.css'"><xsl:attribute name="selected"/></xsl:if>flat.css</option>
+					<option><xsl:if test="$color = 'green.css'"><xsl:attribute name="selected"/></xsl:if>green.css</option>
+					<option><xsl:if test="$color = 'solarized.css'"><xsl:attribute name="selected"/></xsl:if>solarized.css</option>
+				</select>
+				&#160;&#160;&#160; theme = 
+				<select onchange="swap('theme', this.value)">
+					<option><xsl:if test="$theme = '101010.css'"><xsl:attribute name="selected"/></xsl:if>101010.css</option>
+					<option><xsl:if test="$theme = 'planet.css'"><xsl:attribute name="selected"/></xsl:if>planet.css</option>
+					<option><xsl:if test="$theme = 'reader.css'"><xsl:attribute name="selected"/></xsl:if>reader.css</option>
+					<option><xsl:if test="$theme = 'slash.css'"><xsl:attribute name="selected"/></xsl:if>slash.css</option>
+				</select>
+			</form>
+		</xsl:if>
+	</xsl:template>
 </xsl:stylesheet>
