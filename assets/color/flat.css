@@ -1,6 +1,7 @@
 article{background-color:#fff}
 body{background-color:#ddd}
-main{background-color:#ddd;border-color:#ddd!important}
-body>footer{background-color:#fff;border-color:#ddd!important}
-body>header{background-color:#fff;border-color:#ddd!important}
+menu{background-color:#fff;overflow:hidden;white-space:nowrap}
+main{background-color:#ddd;border-color:#fff!important}
+body>footer{background-color:#fff;border-color:#fff!important}
+body>header{background-color:#fff;border-color:#fff!important}
 section{background-color:#fff;border-color:#ddd!important}
