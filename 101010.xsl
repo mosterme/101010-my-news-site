@@ -33,7 +33,7 @@
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
 				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="./assets/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
 				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre><xsl:call-template name="troll:options"/></div></aside>
-				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li></ul></div></aside>
+				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Which-sites-are-supported%3F">Supported sites</a></li></ul></div></aside>
 			</body>
 		</html>
 	</xsl:template>
@@ -81,7 +81,7 @@
 			    <xsl:when test="matches($dateorig, $day8601)"><xsl:value-of select="$dateorig"/>T00:00:00</xsl:when>
 			</xsl:choose></xsl:variable>
 			<xsl:variable name="title" select="atom:title|title|rdf:title|rss:title"/>
-			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>	
+			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>
 			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
@@ -89,7 +89,7 @@
 					<xsl:text> </xsl:text><span><xsl:value-of select="substring-after(replace($text, '&lt;[^&gt;]*&gt;', ''),substring-before($title,'...'))"/></span>
 				</summary>
 				<!-- format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]') -->
-				<xsl:if test="$dateorig!=''"><time><xsl:attribute name="datetime" select="adjust-dateTime-to-timezone($datetime)"/><xsl:value-of select="$dateorig"/></time></xsl:if>
+				<xsl:if test="$dateorig!=''"><time><xsl:attribute name="datetime" select="adjust-dateTime-to-timezone($datetime)"/><xsl:value-of select="format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]')"/></time></xsl:if>
 				<article><xsl:if test="$max = 1"><xsl:attribute name="style" select="'text-align:center'"/></xsl:if>
 					<xsl:value-of select="$text" disable-output-escaping="yes"/>
 				</article>
