@@ -76,9 +76,9 @@
 			<xsl:variable name="dateorig" select="atom:published|dc:date|pubDate"/>
 			<xsl:variable name="datetime"><xsl:choose>
 				<xsl:when test="$dateorig = ''"></xsl:when>
-			    <xsl:when test="matches($dateorig, $rfc2822)"><xsl:value-of select="parse-ietf-date(replace($dateorig, 'CEST','+0200'))"/></xsl:when>
+				<xsl:when test="matches($dateorig, $rfc2822)"><xsl:value-of select="parse-ietf-date(replace($dateorig, 'CEST','+0200'))"/></xsl:when>
 				<xsl:when test="matches($dateorig, $iso8601)"><xsl:value-of select="$dateorig"/></xsl:when>
-			    <xsl:when test="matches($dateorig, $day8601)"><xsl:value-of select="$dateorig"/>T00:00:00</xsl:when>
+				<xsl:when test="matches($dateorig, $day8601)"><xsl:value-of select="$dateorig"/>T00:00:00</xsl:when>
 			</xsl:choose></xsl:variable>
 			<xsl:variable name="title" select="atom:title|title|rdf:title|rss:title"/>
 			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>
