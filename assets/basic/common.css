@@ -10,7 +10,8 @@ header h2 a{font-size:small}
 h2{margin-block-start:0;margin-left:5px}
 q,time{float:right;font-size:small;margin-block-start:2px;margin-right:5px}
 q::before{content:"© "}
-time::before{content:"𝍄 "}
+header time::before{content:"𝍄 "}
+details>time{display:none}
 
 /* disable nav */
 menu{display:none}
