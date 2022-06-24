@@ -2,8 +2,8 @@
 
 Some old static example pages.
 
-* [english](english.html)
-* [german](deutsch.html)
+* [english](output-en.html)
+* [german](output-de.html)
 
 ---
 
