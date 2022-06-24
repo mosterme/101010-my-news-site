@@ -1,0 +1,23 @@
+<!--
+  max   : number of items displayed for each feed.  (can be set globally and/or per feed)
+  icon  : emoji or unicode character. used as favicon and logo. (e.g. 🌍 📰 👓 🛸 🛰️ 🚀)
+  color : css file from ./assets/color/  (blue.css, green.css, flat.css or solarized.css)
+  theme : css file from ./assets/theme/ (101010.css, planet.css, reader.css or slash.css)
+-->
+<config max="10" icon="🛰️" color="blue.css" theme="101010.css" beta="true" path="../assets">
+  <feed max="1">https://joscha.com/rss/all/</feed> <!-- nicht lustig -->
+  <!-- chip! -->
+  <feed>https://www.chip.de/rss/rss_ssh_news.xml</feed>
+  <feed>https://praxistipps.chip.de/feed</feed>
+  <!-- heise -->
+  <feed>https://www.heise.de/newsticker/heise-atom.xml</feed>
+  <feed>https://www.heise.de/security/rss/news-atom.xml</feed>
+  <!-- german blogs -->
+  <feed>https://blog.fefe.de/rss.xml?html</feed>
+  <feed>https://kulturbanause.de/feed/</feed>
+  <!-- german news -->
+  <feed>https://rss.golem.de/rss.php?feed=ATOM1.0</feed>
+  <feed>https://www.tagesschau.de/xml/rss2/</feed>
+  <feed>https://www.taz.de/rss.xml</feed>
+  <feed>https://www.faz.net/rss/aktuell/</feed>
+</config>
