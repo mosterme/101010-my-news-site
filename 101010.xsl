@@ -4,9 +4,9 @@
 	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="title" select="'101010 - my news site'"/>
 	<xsl:variable name="basic" select="'common.css'"/>
-	<xsl:variable name="path" select="'assets'"/> <!-- path to assets -->
 	<xsl:variable name="home" select="'𝓗'"/> <!-- ℍ 𝓗 ⌂ 🗟 -->
 	<xsl:variable name="feed" select="'𝓕'"/> <!-- 𝔽 𝓕 -->
+	<xsl:variable name="path"  select="troll:fallback(//config/@path,'assets')"/> <!-- path to assets -->
 	<xsl:variable name="icon"  select="troll:fallback(//config/@icon,'📰')"/> <!-- 🌎 🌍 🌏 📰 👓 🛸 🛰️ 🚀 -->
 	<xsl:variable name="color" select="troll:fallback(//config/@color,'blue.css')"/>
 	<xsl:variable name="theme" select="troll:fallback(//config/@theme,'101010.css')"/>
@@ -27,13 +27,14 @@
 					<h1><span class="hi"><xsl:value-of select="$icon"/></span> <span class="ht"><xsl:value-of select="$title"/></span></h1>
 				</header>
 				<main>
-					<menu><xsl:apply-templates mode="menu"/></menu>
-					<xsl:apply-templates/>
+					<menu><xsl:apply-templates select="//feed" mode="menu"/></menu>
+					<xsl:apply-templates select="//feed"/>
 				</main>
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
-				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="./assets/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
+				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/*/mynewssite.org">mynewssite.org</a>.</p><p><img src="{$path}/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
 				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre><xsl:call-template name="troll:options"/></div></aside>
 				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Which-sites-are-supported%3F">Supported sites</a></li></ul></div></aside>
+				<script>function swapcss(name, sheet) { document.getElementById(name).setAttribute("href", "<xsl:value-of select="$path"/>" + "/" + name + "/" + sheet) }</script>
 			</body>
 		</html>
 	</xsl:template>
@@ -111,16 +112,15 @@
 	<xsl:template name="troll:options">
 		<xsl:if test="//config/@beta">
 			<form class="content">
-				<script>function swap(name, sheet) { document.getElementById(name).setAttribute("href", "./assets/" + name + "/" + sheet) }</script>
 				<br/><hr/><br/> <label for="color">color = </label>
-				<select name="color" onchange="swap('color', this.value)">
+				<select name="color" onchange="swapcss('color', this.value)">
 					<option><xsl:if test="$color = 'blue.css'"><xsl:attribute name="selected"/></xsl:if>blue.css</option>
 					<option><xsl:if test="$color = 'flat.css'"><xsl:attribute name="selected"/></xsl:if>flat.css</option>
 					<option><xsl:if test="$color = 'green.css'"><xsl:attribute name="selected"/></xsl:if>green.css</option>
 					<option><xsl:if test="$color = 'solarized.css'"><xsl:attribute name="selected"/></xsl:if>solarized.css</option>
 				</select>
 				&#160;&#160;&#160; <label for="theme">theme = </label>
-				<select name="theme" onchange="swap('theme', this.value)">
+				<select name="theme" onchange="swapcss('theme', this.value)">
 					<option><xsl:if test="$theme = '101010.css'"><xsl:attribute name="selected"/></xsl:if>101010.css</option>
 					<option><xsl:if test="$theme = 'planet.css'"><xsl:attribute name="selected"/></xsl:if>planet.css</option>
 					<option><xsl:if test="$theme = 'reader.css'"><xsl:attribute name="selected"/></xsl:if>reader.css</option>
