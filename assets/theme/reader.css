@@ -4,6 +4,3 @@ body>main{border:3px solid;width:90%;margin:5px auto;padding:5px 0;position:fixe
 h1{margin-left:10px;margin-block:0;padding-bottom:4px;overflow:hidden;white-space:nowrap;width:170px}
 section{margin:0 5px 5px 180px}
 menu {display:block!important;float:left;margin-block:0;overflow:hidden;padding-inline:5px;position:fixed;top:58px;white-space:nowrap;width:165px}
-
-::-webkit-scrollbar{height: 1px;width:1px}
-
