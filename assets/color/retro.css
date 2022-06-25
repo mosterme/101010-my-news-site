@@ -1,0 +1,15 @@
+a:visited{color:#f88}
+a{color:#88f;text-decoration:none}
+article{border-color:#444;border-radius:0;width:unset}
+body{background:#000;color:#ccc}
+body>footer{background:#000;border-color:#444!important;border-right:none!important;border-left:none!important}
+body>header{background:#000;border-color:#444!important;border-bottom:2px solid;border-radius:0!important}
+details, footer, header, main {font-family:monospace}
+h2{border-bottom:1px solid #f00;color:#8f8}
+main{border:none!important;padding-right:6px!important}
+menu {list-style:square}
+q, time, ::marker {color:#ff8}
+.popup {background:#666}
+
+::-webkit-scrollbar-thumb{background-color:#444}
+::-webkit-scrollbar-track-piece{background-color:#222}
