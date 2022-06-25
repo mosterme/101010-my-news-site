@@ -117,6 +117,7 @@
 					<option><xsl:if test="$color = 'blue.css'"><xsl:attribute name="selected"/></xsl:if>blue.css</option>
 					<option><xsl:if test="$color = 'flat.css'"><xsl:attribute name="selected"/></xsl:if>flat.css</option>
 					<option><xsl:if test="$color = 'green.css'"><xsl:attribute name="selected"/></xsl:if>green.css</option>
+					<option><xsl:if test="$color = 'retro.css'"><xsl:attribute name="selected"/></xsl:if>retro.css</option>
 					<option><xsl:if test="$color = 'solarized.css'"><xsl:attribute name="selected"/></xsl:if>solarized.css</option>
 				</select>
 				&#160;&#160;&#160; <label for="theme">theme = </label>

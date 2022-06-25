@@ -4,7 +4,7 @@
   color : css file from ./assets/color/  (blue.css, green.css, flat.css or solarized.css)
   theme : css file from ./assets/theme/ (101010.css, planet.css, reader.css or slash.css)
 -->
-<config max="10" icon="📰" color="blue.css" theme="101010.css">
+<config max="10" icon="📰" color="blue.css" theme="101010.css" beta="true">
   <feed max="1">https://xkcd.com/rss.xml</feed>
   <feed>http://rss.slashdot.org/Slashdot/slashdotMain</feed>
   <feed>https://asktom.oracle.com/pls/apex/asktom.popular.rss</feed>
