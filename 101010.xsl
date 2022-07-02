@@ -69,16 +69,6 @@
 	<xsl:template match="atom:entry|item|rss:item|rdf:item">
 		<xsl:param name="max"/>
 		<xsl:if test="position() &lt; $max+1">
-			<xsl:variable name="rfc2822" select="'^(\w{3}, )?\d{1,2} \w{3} \d{4} \d{2}:\d{2}:\d{2} ([+-]?\d{4}|\w{3,4})$'"/>
-			<xsl:variable name="iso8601" select="'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(([+-]\d{2}:\d{2})|Z)$'"/>
-			<xsl:variable name="day8601" select="'^\d{4}-\d{2}-\d{2}$'"/> <!-- iso 8601, but just the date portion -->
-			<xsl:variable name="dateorig" select="atom:published|dc:date|pubDate"/>
-			<xsl:variable name="datetime"><xsl:choose>
-				<xsl:when test="$dateorig = ''"></xsl:when>
-				<xsl:when test="matches($dateorig, $rfc2822)"><xsl:value-of select="parse-ietf-date(replace($dateorig, 'CEST','+0200'))"/></xsl:when>
-				<xsl:when test="matches($dateorig, $iso8601)"><xsl:value-of select="$dateorig"/></xsl:when>
-				<xsl:when test="matches($dateorig, $day8601)"><xsl:value-of select="$dateorig"/>T00:00:00</xsl:when>
-			</xsl:choose></xsl:variable>
 			<xsl:variable name="title" select="atom:title|title|rdf:title|rss:title"/>
 			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>
 			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
@@ -87,8 +77,6 @@
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$title"/></a>
 					<xsl:text> </xsl:text><span><xsl:value-of select="substring-after(replace($text, '&lt;[^&gt;]*&gt;', ''),substring-before($title,'...'))"/></span>
 				</summary>
-				<!-- format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]') -->
-				<xsl:if test="$dateorig!=''"><time><xsl:attribute name="datetime" select="adjust-dateTime-to-timezone($datetime)"/><xsl:value-of select="format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]')"/></time></xsl:if>
 				<article><xsl:if test="$max = 1"><xsl:attribute name="style" select="'text-align:center'"/></xsl:if>
 					<xsl:value-of select="$text" disable-output-escaping="yes"/>
 				</article>
