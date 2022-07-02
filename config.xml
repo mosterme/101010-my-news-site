@@ -4,15 +4,56 @@
   color : css file from ./assets/color/  (blue.css, green.css, flat.css or solarized.css)
   theme : css file from ./assets/theme/ (101010.css, planet.css, reader.css or slash.css)
 -->
-<config max="10" icon="📰" color="blue.css" theme="101010.css" beta="true">
+<config max="10" icon="📰" color="blue.css" theme="planet.css" beta="true">
+  <!-- web comics -->
+  <feed max="1">https://garfieldminusgarfield.net/rss</feed>
+  <feed max="1">https://joscha.com/rss/all/</feed> <!-- nicht lustig -->
+  <feed max="1">https://www.commitstrip.com/en/feed/</feed>
+  <feed max="1">https://www.smbc-comics.com/comic/rss</feed>
   <feed max="1">https://xkcd.com/rss.xml</feed>
-  <feed>http://rss.slashdot.org/Slashdot/slashdotMain</feed>
+
+  <!-- tech blogs -->
+  <!--<feed>https://asktom.oracle.com/pls/apex/asktom.hot.rss</feed>-->
+  <feed>https://asktom.oracle.com/pls/apex/asktom.newest.rss</feed>
   <feed>https://asktom.oracle.com/pls/apex/asktom.popular.rss</feed>
-  <feed>https://blog.fefe.de/rss.xml?html</feed>
   <feed>https://github.blog/feed/</feed>
+  <feed>https://krebsonsecurity.com/feed</feed>
   <feed>https://netflixtechblog.com/feed</feed>
+  <feed>https://www.linux.com/feed/</feed>
+  <feed>http://rss.slashdot.org/Slashdot/slashdotMain</feed> <!-- https not available -->
+
+  <!-- chip! -->
+  <feed>https://www.chip.de/rss/chip_365.xml</feed>
+  <feed>https://www.chip.de/rss/chip_kaufberatung.xml</feed>
+  <feed>https://www.chip.de/rss/rss_schnaeppchen.xml</feed>
+  <feed>https://www.chip.de/rss/rss_ssh_news.xml</feed>
+  <feed>https://praxistipps.chip.de/feed</feed>
+
+  <!-- heise -->
   <feed>https://www.heise.de/newsticker/heise-atom.xml</feed>
+  <feed>https://www.heise.de/developer/rss/news-atom.xml</feed>
   <feed>https://www.heise.de/security/rss/news-atom.xml</feed>
-  <feed>https://www.tagesschau.de/xml/rss2/</feed>
+  <feed>https://www.heise.de/tp/news-atom.xml</feed> <!-- telepolis -->
+
+  <!-- german blogs -->
+  <feed>https://blog.fefe.de/rss.xml?html</feed>
+  <feed>https://kulturbanause.de/feed/</feed>
+  <feed>https://www.serienjunkies.de/rss/news.xml</feed>
+
+  <!-- german news -->
+  <feed>https://rss.golem.de/rss.php?feed=ATOM1.0</feed>
+  <feed>https://www.spiegel.de/index.rss</feed>
+  <feed>https://www.faz.net/rss/aktuell/</feed>
   <feed>https://www.taz.de/rss.xml</feed>
+  <feed>https://www.tagesschau.de/xml/rss2/</feed>
+  <feed>https://www.zdf.de/rss/zdf/nachrichten</feed>
+
+  <!-- other -->
+  <feed>https://blog.codinghorror.com/rss</feed>
+  <feed>http://esr.ibiblio.org/?feed=rss2</feed>
+  <feed>https://cdn.jwz.org/blog/feed/</feed>
+  <feed>https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml</feed>
+  <feed>https://news.yahoo.com/rss/topstories</feed> <!-- only headlines -->
+  <feed>https://www.sneakerfiles.com/feed/</feed>
+
 </config>

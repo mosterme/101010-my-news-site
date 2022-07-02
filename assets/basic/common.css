@@ -21,6 +21,7 @@ menu{display:none}
 .cta{display: none}
 iframe{display:none}
 
+section>header>h2>img {float:right; max-height:64px; max-width:128px; min-width:32px}
 
 /* popup overlay */
 aside {position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0, 0, 0, 0.7);transition:opacity 500ms;visibility:hidden;opacity:0}
