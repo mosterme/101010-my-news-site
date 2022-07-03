@@ -89,7 +89,7 @@
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$title"/></a>
-					<xsl:text> </xsl:text><span><xsl:value-of select="substring-after(replace($text, '&lt;[^&gt;]*&gt;', ''),substring-before($title,'...'))"/></span>
+					<xsl:text> </xsl:text><span><xsl:value-of select="substring(substring-after(replace($text, '&lt;[^&gt;]*&gt;', ''),substring-before($title,'...')),0,400)"/></span>
 				</summary>
 				<!-- format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]') -->
 				<xsl:if test="$dateorig!=''"><time><xsl:attribute name="datetime" select="adjust-dateTime-to-timezone($datetime)"/><xsl:value-of select="format-dateTime($datetime, '[FNn,3-3], [D] [MNn,3-3] [Y] [H01]:[m01]')"/></time></xsl:if>
