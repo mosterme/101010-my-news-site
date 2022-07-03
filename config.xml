@@ -6,10 +6,10 @@
 -->
 <config max="10" icon="📰" color="blue.css" theme="planet.css" beta="true">
   <!-- web comics -->
-  <feed max="1">https://garfieldminusgarfield.net/rss</feed>
+  <feed max="1" img="https://styles.redditmedia.com/t5_1kq2ff/styles/communityIcon_rtundge0dz831.jpg">https://garfieldminusgarfield.net/rss</feed>
   <feed max="1">https://joscha.com/rss/all/</feed> <!-- nicht lustig -->
-  <feed max="1">https://www.commitstrip.com/en/feed/</feed>
-  <feed max="1">https://www.smbc-comics.com/comic/rss</feed>
+  <feed max="1" img="https://www.commitstrip.com/wp-content/themes/krds_blog/images/logo_small.png">https://www.commitstrip.com/en/feed/</feed>
+  <feed max="1" img="https://res.cloudinary.com/crunchbase-production/image/upload/v1418318760/myjddlgf5wr7mxxmjjud.png">https://www.smbc-comics.com/comic/rss</feed>
   <feed max="1">https://xkcd.com/rss.xml</feed>
 
   <!-- tech blogs -->
@@ -18,8 +18,8 @@
   <feed>https://asktom.oracle.com/pls/apex/asktom.popular.rss</feed>
   <feed>https://github.blog/feed/</feed>
   <feed>https://krebsonsecurity.com/feed</feed>
-  <feed>https://netflixtechblog.com/feed</feed>
-  <feed>https://www.linux.com/feed/</feed>
+  <feed img="https://cdn-images-1.medium.com/1*BJWRqfSMf9Da9vsXG9EBRQ.jpeg">https://netflixtechblog.com/feed</feed>
+  <feed img="https://www.linux.com/wp-content/uploads/2019/08/ldc-white-272.png">https://www.linux.com/feed/</feed>
   <feed>http://rss.slashdot.org/Slashdot/slashdotMain</feed> <!-- https not available -->
 
   <!-- chip! -->
@@ -37,8 +37,8 @@
 
   <!-- german blogs -->
   <feed>https://blog.fefe.de/rss.xml?html</feed>
-  <feed>https://kulturbanause.de/feed/</feed>
-  <feed>https://www.serienjunkies.de/rss/news.xml</feed>
+  <feed img="https://kulturbanause.de/wp-content/themes/kulturbanause/assets/fav-touch-icons/apple-touch-icon.png">https://kulturbanause.de/feed/</feed>
+  <feed img="https://g-cdn.serienjunkies.de/icon/apple-icon-72x72.png">https://www.serienjunkies.de/rss/news.xml</feed>
 
   <!-- german news -->
   <feed>https://rss.golem.de/rss.php?feed=ATOM1.0</feed>
@@ -46,14 +46,15 @@
   <feed>https://www.faz.net/rss/aktuell/</feed>
   <feed>https://www.taz.de/rss.xml</feed>
   <feed>https://www.tagesschau.de/xml/rss2/</feed>
-  <feed>https://www.zdf.de/rss/zdf/nachrichten</feed>
+  <feed img="https://yt3.ggpht.com/ytc/AKedOLRjCCaRpGlvBmQZNQ1fK_1yovqb6qeMZ38qhk3Y">https://www.zdf.de/rss/zdf/nachrichten</feed>
 
   <!-- other -->
   <feed>https://blog.codinghorror.com/rss</feed>
   <feed>http://esr.ibiblio.org/?feed=rss2</feed>
   <feed>https://cdn.jwz.org/blog/feed/</feed>
+  <feed>https://grumpygamer.com/rss/</feed>
   <feed>https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml</feed>
-  <feed>https://news.yahoo.com/rss/topstories</feed> <!-- only headlines -->
+  <feed img="https://cdn-1.webcatalog.io/catalog/yahoo-jp/yahoo-jp-icon-filled.png">https://news.yahoo.com/rss/topstories</feed> <!-- only headlines -->
   <feed>https://www.sneakerfiles.com/feed/</feed>
 
 </config>

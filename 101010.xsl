@@ -43,7 +43,11 @@
 			<xsl:variable name="copy"  select="document(.)/atom:feed/atom:rights|document(.)//copyright|document(.)//rdf:copyright|document(.)//rss:copyright|document(.)//dc:rights"/>
 			<xsl:variable name="desc"  select="document(.)/atom:feed/atom:subtitle|document(.)//channel/description|document(.)//rdf:channel/rdf:description|document(.)//rss:channel/rss:description"/>
 			<xsl:variable name="link"  select="document(.)/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|document(.)//channel/link|document(.)//rdf:channel/rdf:link|document(.)//rss:channel/rss:link"/>
-			<xsl:variable name="image"><xsl:choose><xsl:when test="document(.)//channel/image/url"><xsl:value-of select="document(.)//channel/image/url"/></xsl:when><xsl:otherwise><xsl:value-of select="replace($link,'^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$','$1//$2/favicon.ico')"/></xsl:otherwise></xsl:choose></xsl:variable>
+			<xsl:variable name="image"><xsl:choose>
+				<xsl:when test="@img != ''"><xsl:value-of select="@img"/></xsl:when>
+				<xsl:when test="document(.)//channel/image/url"><xsl:value-of select="document(.)//channel/image/url"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="replace($link,'^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$','$1//$2/favicon.ico')"/></xsl:otherwise>
+			</xsl:choose></xsl:variable>
 			<!-- https://www.commitstrip.com/wp-content/themes/krds_blog/images/logo_small.png -->
 			<xsl:message><xsl:value-of select="$image"/></xsl:message>
 			<xsl:attribute name="id" select="generate-id($link)"/>
