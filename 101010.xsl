@@ -39,7 +39,8 @@
 
 	<xsl:template match="feed|outline[@type='rss']">
 		<section>
-			<xsl:variable name="xml" select="document(troll:fallback(@xmlUrl,.))"/>
+			<xsl:variable name="url" select="troll:fallback(@xmlUrl,.)"/>
+			<xsl:variable name="xml" select="document($url)"/>
 			<xsl:variable name="title" select="$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title"/>
 			<xsl:variable name="copy"  select="$xml/atom:feed/atom:rights|$xml//copyright|$xml//rdf:copyright|$xml//rss:copyright|$xml//dc:rights"/>
 			<xsl:variable name="desc"  select="$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description"/>
@@ -49,7 +50,7 @@
 				<h2><xsl:attribute name="title" select="$desc"/>
 					<xsl:value-of select="$title"/><xsl:text> </xsl:text>
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$home"/></a>
-					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="."/><xsl:value-of select="$feed"/></a>
+					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$url"/><xsl:value-of select="$feed"/></a>
 				</h2>
 			</header>
 			<xsl:apply-templates select="$xml//atom:entry|$xml//item|$xml//rdf:item|$xml//rss:item">
@@ -66,7 +67,9 @@
 	<xsl:template match="feed|outline[@type='rss']" mode="menu">
 		<li><a><xsl:variable name="xml" select="document(troll:fallback(@xmlUrl,.))"/>
 			<xsl:variable name="title" select="troll:fallback(@title,$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title)"/>
+			<xsl:variable name="desc"  select="troll:fallback(@text,$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description)"/>
 			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:attribute name="title" select="$desc"/>
 			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="$title"/>
 		</a></li>
 	</xsl:template>
