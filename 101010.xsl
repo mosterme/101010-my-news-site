@@ -71,7 +71,11 @@
 		<xsl:param name="max"/>
 		<xsl:if test="position() &lt; $max+1">
 			<xsl:variable name="title" select="atom:title|title|rdf:title|rss:title"/>
-			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>
+			<xsl:variable name="text"><xsl:choose>
+				<xsl:when test="content:encoded"><xsl:value-of select="content:encoded" disable-output-escaping="yes"/></xsl:when>
+				<xsl:when test="atom:content"><xsl:value-of select="atom:content" disable-output-escaping="yes"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="atom:summary|description|rdf:description|rss:description" disable-output-escaping="yes"/></xsl:otherwise>
+			</xsl:choose></xsl:variable>
 			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
