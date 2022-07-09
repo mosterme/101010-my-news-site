@@ -71,6 +71,7 @@
 			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
 			<xsl:attribute name="title" select="$desc"/>
 			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="$title"/>
+			<xsl:if test="count(//feed|//outline[@type='rss']) &gt; 20"><xsl:message><xsl:number count="feed|outline[@type='rss']" format="0001" level="any"/><xsl:text> </xsl:text><xsl:value-of select="$title"/></xsl:message></xsl:if>
 		</a></li>
 	</xsl:template>
 
