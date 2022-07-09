@@ -3,3 +3,5 @@ a simple news aggregator website. inspired by old sites like [mynewssite.org](ht
 ![blue 101010](./assets/image/blue-101010.png)
 
 > proudly made *without* docker, javascript, php, python, mysql or postgresql.
+
+See [wiki](https://github.com/mosterme/101010-my-news-site/wiki) for more information on [configuration](https://github.com/mosterme/101010-my-news-site/wiki/Configuration), [requirements](https://github.com/mosterme/101010-my-news-site/wiki/Requirements) and a [quickstart](https://github.com/mosterme/101010-my-news-site/wiki/Quickstart) guide.
