@@ -8,7 +8,7 @@
 	<xsl:variable name="path"  select="troll:fallback(//config/@path,'assets')"/> <!-- path to assets -->
 	<xsl:variable name="icon"  select="troll:fallback(//config/@icon,'📰')"/> <!-- 🌎 🌍 🌏 📰 👓 🛸 🛰️ 🚀 -->
 	<xsl:variable name="color" select="troll:fallback(//config/@color,'blue.css')"/>
-	<xsl:variable name="theme" select="troll:fallback(//config/@theme,'101010.css')"/>
+	<xsl:variable name="theme" select="troll:fallback(//config/@theme,'reader.css')"/>
 	<xsl:variable name="count" select="troll:fallback(//config/@max,10)"/>
 
 	<xsl:template match="/">
@@ -26,7 +26,7 @@
 					<h1><span class="hi"><xsl:value-of select="$icon"/></span> <span class="ht"><xsl:value-of select="$title"/></span></h1>
 				</header>
 				<main>
-					<menu><xsl:apply-templates select="//feed" mode="menu"/></menu>
+					<menu><xsl:apply-templates select="//feed|//body/outline" mode="menu"/></menu>
 					<xsl:apply-templates select="//feed|//outline[@type='rss']"/>
 				</main>
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
@@ -39,7 +39,8 @@
 
 	<xsl:template match="feed|outline[@type='rss']">
 		<section>
-			<xsl:variable name="xml" select="document(troll:fallback(.,@xmlUrl))"/>
+			<xsl:variable name="url" select="troll:fallback(@xmlUrl,.)"/>
+			<xsl:variable name="xml" select="document($url)"/>
 			<xsl:variable name="title" select="$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title"/>
 			<xsl:variable name="copy"  select="$xml/atom:feed/atom:rights|$xml//copyright|$xml//rdf:copyright|$xml//rss:copyright|$xml//dc:rights"/>
 			<xsl:variable name="desc"  select="$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description"/>
@@ -49,7 +50,7 @@
 				<h2><xsl:attribute name="title" select="$desc"/>
 					<xsl:value-of select="$title"/><xsl:text> </xsl:text>
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$home"/></a>
-					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="."/><xsl:value-of select="$feed"/></a>
+					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$url"/><xsl:value-of select="$feed"/></a>
 				</h2>
 			</header>
 			<xsl:apply-templates select="$xml//atom:entry|$xml//item|$xml//rdf:item|$xml//rss:item">
@@ -59,11 +60,17 @@
 		</section>
 	</xsl:template>
 
-	<xsl:template match="feed" mode="menu">
-		<li><a>
-			<xsl:variable name="title" select="document(.)/atom:feed/atom:title|document(.)//channel/title|document(.)//rdf:channel/rdf:title|document(.)//rss:channel/rss:title"/>
-			<xsl:variable name="link"  select="document(.)/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|document(.)//channel/link|document(.)//rdf:channel/rdf:link|document(.)//rss:channel/rss:link"/>
-			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="troll:fallback(substring-before($title, ' - '), $title)"/>
+	<xsl:template match="outline" mode="menu">
+		<details><summary><xsl:value-of select="@title"/></summary><xsl:apply-templates select="outline" mode="menu"/></details>
+	</xsl:template>
+
+	<xsl:template match="feed|outline[@type='rss']" mode="menu">
+		<li><a><xsl:variable name="xml" select="document(troll:fallback(@xmlUrl,.))"/>
+			<xsl:variable name="title" select="troll:fallback(@title,$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title)"/>
+			<xsl:variable name="desc"  select="troll:fallback(@text,$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description)"/>
+			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:attribute name="title" select="$desc"/>
+			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="$title"/>
 		</a></li>
 	</xsl:template>
 
@@ -71,7 +78,11 @@
 		<xsl:param name="max"/>
 		<xsl:if test="position() &lt; $max+1">
 			<xsl:variable name="title" select="atom:title|title|rdf:title|rss:title"/>
-			<xsl:variable name="text" select="troll:fallback(content:encoded,atom:summary|description|rdf:description|rss:description)"/>
+			<xsl:variable name="text"><xsl:choose>
+				<xsl:when test="content:encoded"><xsl:value-of select="content:encoded" disable-output-escaping="yes"/></xsl:when>
+				<xsl:when test="atom:content"><xsl:value-of select="atom:content" disable-output-escaping="yes"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="atom:summary|description|rdf:description|rss:description" disable-output-escaping="yes"/></xsl:otherwise>
+			</xsl:choose></xsl:variable>
 			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
