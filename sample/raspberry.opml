@@ -1,0 +1,77 @@
+<opml version="1.0">
+	<head>
+		<title>101010 - my news site</title>
+		<config icon="👨🏻‍💻" color="solarized.css" theme="reader.css"/>
+	</head>
+	<body>
+		<outline title="Web Comics" text="Web Comics">
+			<outline max="1" type="rss" title="xkcd.com" text="A webcomic of romance and math humor" xmlUrl="https://xkcd.com/rss.xml" />
+		</outline>
+		<outline title="Newspapers" text="Newspapers">
+			<outline title="DER SPIEGEL" text="Deutschlands führende Nachrichtenseite. Alles Wichtige aus Politik, Wirtschaft, Sport, Kultur, Wissenschaft, Technik und mehr.">
+				<outline type="rss" title="Schlagzeilen" text="DER SPIEGEL | Schlagzeilen" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" />
+				<outline type="rss" title="Nachrichten"  text="DER SPIEGEL | Nachrichten"  xmlUrl="https://www.spiegel.de/index.rss" />
+			</outline>
+			<outline title="FAZ.NET" text="News, Nachrichten und aktuelle Meldungen aus allen Ressorts. Politik, Wirtschaft, Sport, Feuilleton und Finanzen im Überblick.">
+				<outline type="rss" title="Aktuelle Nachrichten online - FAZ.NET" text="Aktuelle Nachrichten online - FAZ.NET" xmlUrl="https://www.faz.net/rss/aktuell/" />
+				<outline type="rss" title="Fazblog - Blogs der FAZ" text="Fazblog - Blogs der FAZ" xmlUrl="https://blogs.faz.net/feed/" />
+			</outline>
+			<outline type="rss" title="Frankfurter Rundschau" text="Frankfurter Rundschau" xmlUrl="https://www.fr.de/rssfeed.rdf" />
+			<outline type="rss" title="taz. die tageszeitung" text="Kritischer, unabhängiger Journalismus der linken Nachrichtenseite taz: Analysen, Hintergründe, Kommentare, Interviews, Reportagen. Genossenschaft seit 1992." xmlUrl="https://www.taz.de/rss.xml" />
+		</outline>
+		<outline title="Other" text="Other">
+			<outline type="rss" title="Emojipedia" text="The latest news and emoji analysis from Emojipedia." xmlUrl="https://blog.emojipedia.org/rss/" />
+			<outline type="rss" title="Serienjunkies" text="Alle Serien auf serienjunkies.de" xmlUrl="https://www.serienjunkies.de/rss/news.xml" />
+			<outline type="rss" title="SneakerFiles" text="Sneaker News, Release Dates &amp; History" xmlUrl="https://www.sneakerfiles.com/feed/" />
+		</outline>
+		<outline title="People" text="People">
+			<outline type="rss" title="Fefes Blog" text="Verschwörungen und Obskures aus aller Welt." xmlUrl="https://blog.fefe.de/rss.xml?html" />
+			<outline type="rss" title="Grumpy Gamer" text="Ron Gilbert's often incoherent and bitter ramblings about the Game Industry." xmlUrl="https://grumpygamer.com/rss/" />
+			<outline type="rss" title="jwz" text="yes that jwz" xmlUrl="https://cdn.jwz.org/blog/feed/" />
+		</outline>
+		<outline title="Tech Blogs" text="tech blogs">
+			<outline title="chip!" text="News, Downloads, Tech- &amp; Verbraucherberatung">
+				<outline type="rss" title="CHIP News" text="Alle Artikel der CHIP-Newsredaktion sofort nach Veröffentlichung" xmlUrl="https://www.chip.de/rss/rss_ssh_news.xml" />
+				<outline type="rss" title="CHIP Praxistipps" text="Die besten Tipps &amp; Tricks, um das meiste aus Ihrer Software und Hardware zu holen" xmlUrl="https://praxistipps.chip.de/feed" />
+				<outline type="rss" title="CHIP Kaufberatung" text="Behalten Sie den Überblick über alle neuen Produkttests und Kaufberatungen von CHIP" xmlUrl="https://www.chip.de/rss/chip_kaufberatung.xml" />
+				<outline type="rss" title="CHIP Online Schnäppchen" text="Die besten Angebote aus dem Internet samt Einschätzungen der CHIP-Redaktion" xmlUrl="https://www.chip.de/rss/rss_schnaeppchen.xml" />
+			</outline>
+			<outline title="Golem.de" text="IT-News für Profis">
+				<outline type="rss" title="Golem.de" text="IT-News für Profis" xmlUrl="https://rss.golem.de/rss.php?feed=RSS2.0" />
+				<outline type="rss" title="Golem.de - Games" text="Golem.de - Games" xmlUrl="https://rss.golem.de/rss.php?ms=games&amp;feed=RSS2.0" />
+				<outline type="rss" title="Golem.de - Security" text="Golem.de - Security" xmlUrl="https://rss.golem.de/rss.php?ms=security&amp;feed=RSS2.0" />
+				<outline type="rss" title="Golem.de - Softwareentwicklung" text="Golem.de - Softwareentwicklung" xmlUrl="https://rss.golem.de/rss.php?ms=softwareentwicklung&amp;feed=RSS2.0" />
+			</outline>
+			<outline title="heise online" text="IT-News, Nachrichten und Hintergründe">
+				<outline title="heise Developer" text="heise Developer">
+					<outline type="rss" title="heise Developer" text="Neueste Meldungen" xmlUrl="https://www.heise.de/developer/rss/news.rdf" />
+					<outline type="rss" title="the next big thing" text="the next big thing" xmlUrl="https://www.heise.de/developer/rss/next-big-thing-blog.rdf" />
+					<outline type="rss" title="Continuous Architecture" text="Continuous Architecture" xmlUrl="https://www.heise.de/developer/rss/continuous-architecture-blog.rdf" />
+					<outline type="rss" title="Der Pragmatische Architekt" text="Der Pragmatische Architekt" xmlUrl="https://www.heise.de/developer/rss/der-pragmatische-architekt-blog.rdf" />
+					<outline type="rss" title="Well Organized" text="Well Organized" xmlUrl="https://www.heise.de/developer/rss/well-organized-blog.rdf" />		
+				</outline>
+				<outline type="rss" title="heise online Top-News" text="heise online Top-News" xmlUrl="https://www.heise.de/rss/heise-top-atom.xml" />
+				<outline type="rss" title="heise online Netzpolitik" text="heise online Netzpolitik" xmlUrl="https://www.heise.de/rss/heise-Rubrik-Netzpolitik.rdf" />
+				<outline type="rss" title="heise online Wissen" text="heise online Wissen" xmlUrl="https://www.heise.de/rss/heise-Rubrik-Wissen.rdf" />
+				<outline type="rss" title="heise Security" text="heise Security" xmlUrl="https://www.heise.de/security/rss/news.rdf" />
+			</outline>
+			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
+			<outline type="rss" title="Linux.com" text="News For Open Source Professionals" xmlUrl="https://www.linux.com/feed/" />
+			<outline type="rss" title="Kotaku" text="Gaming Reviews, News, Tips and More." xmlUrl="https://kotaku.com/rss" />
+			<outline type="rss" title="Krebs on Security" text="In-depth security news and investigation" xmlUrl="https://krebsonsecurity.com/feed" />
+			<outline type="rss" title="Netflix TechBlog" text="Learn about Netflix’s world class engineering efforts, company culture, product developments and more." xmlUrl="https://netflixtechblog.com/feed" />
+			<outline type="rss" title="Walmart Tech Blog" text="We’re powering the next great retail disruption." xmlUrl="https://medium.com/feed/walmartglobaltech" />
+			<outline type="rss" title="Slashdot" text="News for nerds, stuff that matters." xmlUrl="http://rss.slashdot.org/Slashdot/slashdotMain" /> <!-- https not available -->
+		</outline>
+		<outline title="TV News" text="TV News">
+			<outline type="rss" title="CNN - World News" text="Breaking News, US News, World News and Video" xmlUrl="http://rss.cnn.com/rss/edition_world.rss" />
+			<outline type="rss" title="ARD Tagesschau" text="Aktuelle Nachrichten - Inland Ausland Wirtschaft Kultur Sport" xmlUrl="https://www.tagesschau.de/xml/rss2/" />
+			<outline type="rss" title="ZDF heute" text="News aus Deutschland sowie aktuelle Nachrichten aus Europa und aller Welt." xmlUrl="https://www.zdf.de/rss/zdf/nachrichten" />			
+		</outline>
+<!--
+		<outline title="" text="">
+			<outline type="rss" title="" text="" xmlUrl="" />
+		</outline>
+-->
+	</body>
+</opml>
