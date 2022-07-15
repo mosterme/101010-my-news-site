@@ -106,7 +106,6 @@
 	</xsl:function>
 
 	<xsl:template name="troll:options">
-		<xsl:if test="//config/@beta">
 			<script>function swapcss(name, sheet) { document.getElementById(name).setAttribute("href", "<xsl:value-of select="$path"/>" + "/" + name + "/" + sheet) }</script>
 			<form class="content">
 				<label for="color">color = </label>
@@ -125,6 +124,5 @@
 					<option><xsl:if test="$theme = 'slash.css'"><xsl:attribute name="selected"/></xsl:if>slash.css</option>
 				</select>
 			</form>
-		</xsl:if>
 	</xsl:template>
 </xsl:stylesheet>
