@@ -44,7 +44,7 @@
 			<xsl:variable name="title" select="$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title"/>
 			<xsl:variable name="copy"  select="$xml/atom:feed/atom:rights|$xml//copyright|$xml//rdf:copyright|$xml//rss:copyright|$xml//dc:rights"/>
 			<xsl:variable name="desc"  select="$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description"/>
-			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[@type='text/html']/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
 			<xsl:attribute name="id" select="generate-id($link)"/>
 			<header>
 				<h2><xsl:attribute name="title" select="$desc"/>
@@ -68,7 +68,7 @@
 		<li><a><xsl:variable name="xml" select="document(troll:fallback(@xmlUrl,.))"/>
 			<xsl:variable name="title" select="troll:fallback(@title,$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title)"/>
 			<xsl:variable name="desc"  select="troll:fallback(@text,$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description)"/>
-			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[@type='text/html']/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
 			<xsl:attribute name="title" select="$desc"/>
 			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="$title"/>
 			<xsl:if test="count(//feed|//outline[@type='rss']) &gt; 20"><xsl:message><xsl:number count="feed|outline[@type='rss']" format="0001" level="any"/><xsl:text> </xsl:text><xsl:value-of select="$title"/></xsl:message></xsl:if>
