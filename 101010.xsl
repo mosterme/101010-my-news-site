@@ -84,7 +84,7 @@
 				<xsl:when test="atom:content"><xsl:value-of select="atom:content" disable-output-escaping="yes"/></xsl:when>
 				<xsl:otherwise><xsl:value-of select="atom:summary|description|rdf:description|rss:description" disable-output-escaping="yes"/></xsl:otherwise>
 			</xsl:choose></xsl:variable>
-			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
+			<xsl:variable name="link" select="troll:fallback(atom:link/@href,link|rdf:link|rss:link)"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$title"/></a>
