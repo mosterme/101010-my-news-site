@@ -31,7 +31,7 @@
 				</main>
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
 				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/20101010101010/mynewssite.org">mynewssite.org</a>.</p><p><img src="{$path}/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
-				<aside id="config"><div class="popup"><h2>config.xml</h2><a class="close" href="#x">×</a><pre class="content"><xsl:apply-templates select="/" mode="echo"/></pre><xsl:call-template name="troll:options"/></div></aside>
+				<aside id="config"><div class="popup"><h2>Configuration</h2><a class="close" href="#x">×</a><xsl:call-template name="troll:options"/></div></aside>
 				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Which-sites-are-supported%3F">Supported sites</a></li></ul></div></aside>
 			</body>
 		</html>
@@ -44,7 +44,7 @@
 			<xsl:variable name="title" select="$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title"/>
 			<xsl:variable name="copy"  select="$xml/atom:feed/atom:rights|$xml//copyright|$xml//rdf:copyright|$xml//rss:copyright|$xml//dc:rights"/>
 			<xsl:variable name="desc"  select="$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description"/>
-			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[@type='text/html']/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
 			<xsl:attribute name="id" select="generate-id($link)"/>
 			<header>
 				<h2><xsl:attribute name="title" select="$desc"/>
@@ -68,7 +68,7 @@
 		<li><a><xsl:variable name="xml" select="document(troll:fallback(@xmlUrl,.))"/>
 			<xsl:variable name="title" select="troll:fallback(@title,$xml/atom:feed/atom:title|$xml//channel/title|$xml//rdf:channel/rdf:title|$xml//rss:channel/rss:title)"/>
 			<xsl:variable name="desc"  select="troll:fallback(@text,$xml/atom:feed/atom:subtitle|$xml//channel/description|$xml//rdf:channel/rdf:description|$xml//rss:channel/rss:description)"/>
-			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[not(@rel='self')][not(@rel='hub')]/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
+			<xsl:variable name="link"  select="$xml/atom:feed/atom:link[@type='text/html']/@href|$xml//channel/link|$xml//rdf:channel/rdf:link|$xml//rss:channel/rss:link"/>
 			<xsl:attribute name="title" select="$desc"/>
 			<xsl:attribute name="href" select="concat('#', generate-id($link))"/> <xsl:value-of select="$title"/>
 			<xsl:if test="count(//feed|//outline[@type='rss']) &gt; 20"><xsl:message><xsl:number count="feed|outline[@type='rss']" format="0001" level="any"/><xsl:text> </xsl:text><xsl:value-of select="$title"/></xsl:message></xsl:if>
@@ -84,7 +84,7 @@
 				<xsl:when test="atom:content"><xsl:value-of select="atom:content" disable-output-escaping="yes"/></xsl:when>
 				<xsl:otherwise><xsl:value-of select="atom:summary|description|rdf:description|rss:description" disable-output-escaping="yes"/></xsl:otherwise>
 			</xsl:choose></xsl:variable>
-			<xsl:variable name="link" select="atom:link/@href|link|rdf:link|rss:link"/>
+			<xsl:variable name="link" select="troll:fallback(atom:link/@href,link|rdf:link|rss:link)"/>
 			<details><xsl:if test="$max = 1"><xsl:attribute name="open"/></xsl:if>
 				<summary>
 					<a rel="noopener noreferrer" target="_blank"><xsl:attribute name="href" select="$link"/><xsl:value-of select="$title"/></a>
@@ -97,9 +97,6 @@
 		</xsl:if> 
 	</xsl:template>
 
-    <xsl:template match="*" mode="echo">&lt;<xsl:value-of select="name()"/><xsl:apply-templates select="@*" mode="echo"/>&gt;<xsl:apply-templates mode="echo"/>&lt;/<xsl:value-of select="name()"/>&gt;</xsl:template>
-    <xsl:template match="@*" mode="echo"><xsl:text> </xsl:text><xsl:value-of select="name()"/>="<xsl:value-of select="."/>"</xsl:template> <xsl:template match="text()" mode="echo"><xsl:value-of select="."/></xsl:template>
-
 	<xsl:function name="troll:fallback">
 		<xsl:param name="fall"/> <xsl:param name="back"/>
 		<xsl:choose>
@@ -109,10 +106,9 @@
 	</xsl:function>
 
 	<xsl:template name="troll:options">
-		<xsl:if test="//config/@beta">
 			<script>function swapcss(name, sheet) { document.getElementById(name).setAttribute("href", "<xsl:value-of select="$path"/>" + "/" + name + "/" + sheet) }</script>
 			<form class="content">
-				<br/><hr/><br/> <label for="color">color = </label>
+				<label for="color">color = </label>
 				<select name="color" onchange="swapcss('color', this.value)">
 					<option><xsl:if test="$color = 'blue.css'"><xsl:attribute name="selected"/></xsl:if>blue.css</option>
 					<option><xsl:if test="$color = 'flat.css'"><xsl:attribute name="selected"/></xsl:if>flat.css</option>
@@ -128,6 +124,5 @@
 					<option><xsl:if test="$theme = 'slash.css'"><xsl:attribute name="selected"/></xsl:if>slash.css</option>
 				</select>
 			</form>
-		</xsl:if>
 	</xsl:template>
 </xsl:stylesheet>
