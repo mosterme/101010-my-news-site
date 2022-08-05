@@ -137,6 +137,12 @@
 				<outline type="rss" title="Telepolis" text="Telepolis" xmlUrl="https://www.heise.de/tp/news-atom.xml" />
 				<outline type="rss" title="TechStage" text="Aktuelle News von TechStage" xmlUrl="https://www.techstage.de/rss.xml" />
 			</outline>
+			<outline title="Microsoft Developer Blogs" text="Get the latest information, insights, announcements, and news from Microsoft.">
+				<outline type="rss" title="Microsoft Developer Blogs" text="Get the latest information, insights, announcements, and news from Microsoft." xmlUrl="https://devblogs.microsoft.com/landingpage/" />
+				<outline type="rss" title="Visual Studio Blog" text="The official source of product insight from the Visual Studio Engineering Team." xmlUrl="https://devblogs.microsoft.com/visualstudio/feed/" />
+				<outline type="rss" title="Windows Command Line" text="Windows Terminal, Console and Command Line, Windows Subsystem for Linux, WSL, Windows Package Manager." xmlUrl="https://devblogs.microsoft.com/commandline/feed/" />
+				<!-- more blogs available, see https://devblogs.microsoft.com/ -->
+			</outline>
 			<outline type="rss" title="Emojipedia" text="The latest news and emoji analysis from Emojipedia." xmlUrl="https://blog.emojipedia.org/rss/" />
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
 			<outline type="rss" title="Hacker News" text="Links for the intellectually curious, ranked by readers." xmlUrl="https://news.ycombinator.com/rss" />
