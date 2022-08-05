@@ -56,9 +56,10 @@
 				<outline type="rss" title="heise Security" text="heise Security" xmlUrl="https://www.heise.de/security/rss/news.rdf" />
 			</outline>
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
-			<outline type="rss" title="Linux.com" text="News For Open Source Professionals" xmlUrl="https://www.linux.com/feed/" />
 			<outline type="rss" title="Kotaku" text="Gaming Reviews, News, Tips and More." xmlUrl="https://kotaku.com/rss" />
 			<outline type="rss" title="Krebs on Security" text="In-depth security news and investigation" xmlUrl="https://krebsonsecurity.com/feed" />
+			<outline type="rss" title="Linux.com" text="News For Open Source Professionals" xmlUrl="https://www.linux.com/feed/" />
+			<outline type="rss" title="Microsoft Developer Blogs" text="Get the latest information, insights, announcements, and news from Microsoft." xmlUrl="https://devblogs.microsoft.com/landingpage/" />
 			<outline type="rss" title="Netflix TechBlog" text="Learn about Netflix’s world class engineering efforts, company culture, product developments and more." xmlUrl="https://netflixtechblog.com/feed" />
 			<outline type="rss" title="Walmart Tech Blog" text="We’re powering the next great retail disruption." xmlUrl="https://medium.com/feed/walmartglobaltech" />
 			<outline type="rss" title="Slashdot" text="News for nerds, stuff that matters." xmlUrl="http://rss.slashdot.org/Slashdot/slashdotMain" /> <!-- https not available -->
