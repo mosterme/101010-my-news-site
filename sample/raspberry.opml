@@ -50,6 +50,7 @@
 				<outline type="rss" title="heise online Wissen" text="heise online Wissen" xmlUrl="https://www.heise.de/rss/heise-Rubrik-Wissen.rdf" />
 				<outline type="rss" title="heise Security" text="heise Security" xmlUrl="https://www.heise.de/security/rss/news.rdf" />
 			</outline>
+			<outline type="rss" title="Bleeping Computer" text="Bleeping Computer" xmlUrl="https://www.bleepingcomputer.com/feed/" />
 			<outline type="rss" title="Emojipedia" text="The latest news and emoji analysis from Emojipedia." xmlUrl="https://blog.emojipedia.org/rss/" />
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
 			<outline type="rss" title="Kotaku" text="Gaming Reviews, News, Tips and More." xmlUrl="https://kotaku.com/rss" />
