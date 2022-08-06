@@ -18,6 +18,7 @@
 			</outline>
 			<outline type="rss" title="Frankfurter Rundschau" text="Frankfurter Rundschau" xmlUrl="https://www.fr.de/rssfeed.rdf" />
 			<outline type="rss" title="taz. die tageszeitung" text="Kritischer, unabhängiger Journalismus der linken Nachrichtenseite taz: Analysen, Hintergründe, Kommentare, Interviews, Reportagen. Genossenschaft seit 1992." xmlUrl="https://www.taz.de/rss.xml" />
+			<outline type="rss" title="The Guardian" text=">Latest international news, sport and comment from the Guardian." xmlUrl="https://www.theguardian.com/international/rss" />
 		</outline>
 		<outline title="People" text="People">
 			<outline type="rss" title="Fefes Blog" text="Verschwörungen und Obskures aus aller Welt." xmlUrl="https://blog.fefe.de/rss.xml?html" />
@@ -50,6 +51,7 @@
 				<outline type="rss" title="heise online Wissen" text="heise online Wissen" xmlUrl="https://www.heise.de/rss/heise-Rubrik-Wissen.rdf" />
 				<outline type="rss" title="heise Security" text="heise Security" xmlUrl="https://www.heise.de/security/rss/news.rdf" />
 			</outline>
+			<outline type="rss" title="Bleeping Computer" text="Bleeping Computer" xmlUrl="https://www.bleepingcomputer.com/feed/" />
 			<outline type="rss" title="Emojipedia" text="The latest news and emoji analysis from Emojipedia." xmlUrl="https://blog.emojipedia.org/rss/" />
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
 			<outline type="rss" title="Kotaku" text="Gaming Reviews, News, Tips and More." xmlUrl="https://kotaku.com/rss" />
