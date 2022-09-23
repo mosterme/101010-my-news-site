@@ -5,6 +5,7 @@
 	<xsl:variable name="basic" select="'common.css'"/>
 	<xsl:variable name="home" select="'𝓗'"/> <!-- ℍ 𝓗 ⌂ 🗟 -->
 	<xsl:variable name="feed" select="'𝓕'"/> <!-- 𝔽 𝓕 -->
+	<xsl:variable name="wiki" select="'https://github.com/mosterme/101010-my-news-site/wiki'"/>
 	<xsl:variable name="path"  select="troll:fallback(//config/@path,'assets')"/> <!-- path to assets -->
 	<xsl:variable name="icon"  select="troll:fallback(//config/@icon,'📰')"/> <!-- 🌎 🌍 🌏 📰 👓 🛸 🛰️ 🚀 -->
 	<xsl:variable name="color" select="troll:fallback(//config/@color,'blue.css')"/>
@@ -32,7 +33,7 @@
 				<footer id="x"><a href="#about">about</a> | <a href="#config">config</a> | <a href="#help">help</a></footer>
 				<aside id="about"><div class="popup"><h2>101010 - my news site</h2><a class="close" href="#x">×</a><center class="content"><p>a simple news aggregator website. inspired by old sites like <a rel="noopener noreferrer" target="_blank" href="https://web.archive.org/web/20101010101010/mynewssite.org">mynewssite.org</a>.</p><p><img src="{$path}/image/blue-101010.png" alt="blue 101010"/></p><p>proudly made <em>without</em> docker, javascript, php, python, mysql or postgresql.</p></center></div></aside>
 				<aside id="config"><div class="popup"><h2>Configuration</h2><a class="close" href="#x">×</a><xsl:call-template name="troll:options"/></div></aside>
-				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Configuration">Configuration</a></li><li><a rel="noopener noreferrer" target="_blank" href="https://github.com/mosterme/101010-my-news-site/wiki/Supported-Sites">Supported sites</a></li></ul></div></aside>
+				<aside id="help"><div class="popup"><h2>Check the <a rel="noopener noreferrer" target="_blank" href="{$wiki}">Wiki</a> for information about ...</h2><a class="close" href="#x">×</a><ul class="content"><li><a rel="noopener noreferrer" target="_blank" href="{$wiki}/Requirements">Requirements</a></li><li><a rel="noopener noreferrer" target="_blank" href="{$wiki}/Quickstart">Quickstart</a></li><li><a rel="noopener noreferrer" target="_blank" href="{$wiki}/Configuration">Configuration</a></li><li><a rel="noopener noreferrer" target="_blank" href="{$wiki}/Supported-Sites">Supported sites</a></li></ul></div></aside>
 			</body>
 		</html>
 	</xsl:template>
