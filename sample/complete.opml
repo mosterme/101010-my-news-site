@@ -41,11 +41,11 @@
 				<outline type="rss" title="Science" text="What’s new on the front lines of science, from deep space to DNA sequencing." xmlUrl="https://www.wired.com/feed/category/science/latest/rss"/>
 				<outline type="rss" title="Security" text="Your daily briefing on security, freedom, and privacy in the WIRED world." xmlUrl="https://www.wired.com/feed/category/security/latest/rss"/>
 				<outline type="rss" title="Backchannel" text="Longform narratives and investigations on how emerging technologies affect culture, the economy, and politics." xmlUrl="https://www.wired.com/feed/category/backchannel/latest/rss"/>
-				<!--<outline type="rss" title="WIRED Guides" text="Everything we know about everything that matters. Deep dives into big issues." xmlUrl="https://www.wired.com/feed/tag/wired-guide/latest/rss"/>-->
+				<!-- <outline type="rss" title="WIRED Guides" text="Everything we know about everything that matters. Deep dives into big issues." xmlUrl="https://www.wired.com/feed/tag/wired-guide/latest/rss"/> -->
 			</outline>
 			<outline type="rss" title="The Verge" text="The Verge" xmlUrl="https://www.theverge.com/rss/index.xml" />
 			<outline type="rss" title="engadget" text="Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics." xmlUrl="https://www.engadget.com/rss.xml" />
-			<outline type="rss" title="Serienjunkies" text="Alle Serien auf serienjunkies.de" xmlUrl="https://www.serienjunkies.de/rss/news.xml" />
+			<!-- <outline type="rss" title="Serienjunkies" text="Alle Serien auf serienjunkies.de" xmlUrl="https://www.serienjunkies.de/rss/news.xml" /> -->
 			<outline type="rss" title="SneakerFiles" text="Sneaker News, Release Dates &amp; History" xmlUrl="https://www.sneakerfiles.com/feed/" />
 			<outline type="rss" title="qwertee.com" text="New Daily Tees from Qwertee.com" xmlUrl="https://www.qwertee.com/rss/" />
 			<outline type="rss" title="netzpolitik.org" text="netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" />
