@@ -46,8 +46,8 @@
 			<outline type="rss" title="The Verge" text="The Verge" xmlUrl="https://www.theverge.com/rss/index.xml" />
 			<outline type="rss" title="engadget" text="Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics." xmlUrl="https://www.engadget.com/rss.xml" />
 			<!-- <outline type="rss" title="Serienjunkies" text="Alle Serien auf serienjunkies.de" xmlUrl="https://www.serienjunkies.de/rss/news.xml" /> -->
-			<outline type="rss" title="SneakerFiles" text="Sneaker News, Release Dates &amp; History" xmlUrl="https://www.sneakerfiles.com/feed/" />
-			<outline type="rss" title="qwertee.com" text="New Daily Tees from Qwertee.com" xmlUrl="https://www.qwertee.com/rss/" />
+			<!-- <outline type="rss" title="SneakerFiles" text="Sneaker News, Release Dates &amp; History" xmlUrl="https://www.sneakerfiles.com/feed/" /> -->
+			<!-- <outline type="rss" title="qwertee.com" text="New Daily Tees from Qwertee.com" xmlUrl="https://www.qwertee.com/rss/" /> -->
 			<outline type="rss" title="netzpolitik.org" text="netzpolitik.org" xmlUrl="https://netzpolitik.org/feed/" />
 		</outline>
 		<outline title="People" text="People">
@@ -60,6 +60,7 @@
 		</outline>
 		<!-- <outline type="rss" title="Oracle Connect" text="Ideas for a competitive edge" xmlUrl="https://blogs.oracle.com/connect/rss" /> -->
 		<outline title="Tech Blogs" text="tech blogs">
+			<outline type="rss" title="1Password Blog" text="1Password news and announcements feed" xmlUrl="https://blog.1password.com/index.xml" />
 			<outline title="Ask Tom" text="Ask The Oracle Mentors">
 				<outline type="rss" title="Hot Questions" text="Hot Questions" xmlUrl="https://asktom.oracle.com/pls/apex/asktom.hot.rss" />
 				<outline type="rss" title="New Questions" text="New Questions" xmlUrl="https://asktom.oracle.com/pls/apex/asktom.newest.rss" />
@@ -144,7 +145,7 @@
 				<outline type="rss" title="Windows Command Line" text="Windows Terminal, Console and Command Line, Windows Subsystem for Linux, WSL, Windows Package Manager." xmlUrl="https://devblogs.microsoft.com/commandline/feed/" />
 				<!-- more blogs available, see https://devblogs.microsoft.com/ -->
 			</outline>
-			<outline type="rss" title="Bleeping Computer" text="Bleeping Computer" xmlUrl="https://www.bleepingcomputer.com/feed/" />
+			<!-- <outline type="rss" title="Bleeping Computer" text="Bleeping Computer" xmlUrl="https://www.bleepingcomputer.com/feed/" /> -->
 			<outline type="rss" title="Emojipedia" text="The latest news and emoji analysis from Emojipedia." xmlUrl="https://blog.emojipedia.org/rss/" />
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
 			<outline type="rss" title="Hacker News" text="Links for the intellectually curious, ranked by readers." xmlUrl="https://news.ycombinator.com/rss" />
@@ -153,10 +154,10 @@
 			<outline type="rss" title="kulturbanause®" text="Webdesign Agentur für WordPress, Responsive Design, Grafik, Webentwicklung." xmlUrl="https://kulturbanause.de/feed/" />
 			<outline type="rss" title="Linux.com" text="News For Open Source Professionals" xmlUrl="https://www.linux.com/feed/" />
 			<outline type="rss" title="Netflix TechBlog" text="Learn about Netflix’s world class engineering efforts, company culture, product developments and more." xmlUrl="https://netflixtechblog.com/feed" />
-			<outline type="rss" title="Phoronix" text="Linux Hardware Reviews &amp; News" xmlUrl="https://www.phoronix.com/rss.php" />
+			<!-- <outline type="rss" title="Phoronix" text="Linux Hardware Reviews &amp; News" xmlUrl="https://www.phoronix.com/rss.php" /> -->
 			<outline type="rss" title="Slashdot" text="News for nerds, stuff that matters." xmlUrl="http://rss.slashdot.org/Slashdot/slashdotMain" /> <!-- https not available -->
 			<outline type="rss" title="The Unicode Blog" text="News, announcements, release info and calendar updates from the Unicode Consortium." xmlUrl="http://blog.unicode.org/feeds/posts/default" />
-			<outline type="rss" title="Walmart Global Tech Blog" text="We’re powering the next great retail disruption." xmlUrl="https://medium.com/feed/walmartglobaltech" />
+			<!-- <outline type="rss" title="Walmart Global Tech Blog" text="We’re powering the next great retail disruption." xmlUrl="https://medium.com/feed/walmartglobaltech" /> -->
 		</outline>
 		<outline title="TV News" text="TV News">
 			<outline title="CNN International" text="Breaking News, US News, World News and Video">
