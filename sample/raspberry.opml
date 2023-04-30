@@ -64,7 +64,7 @@
 		</outline>
 		<outline title="TV News" text="TV News">
 			<outline type="rss" title="CNN - World News" text="Breaking News, US News, World News and Video" xmlUrl="http://rss.cnn.com/rss/edition_world.rss" />
-			<outline type="rss" title="ARD Tagesschau" text="Aktuelle Nachrichten - Inland Ausland Wirtschaft Kultur Sport" xmlUrl="https://www.tagesschau.de/xml/rss2/" />
+			<outline type="rss" title="ARD Tagesschau" text="Aktuelle Nachrichten - Inland Ausland Wirtschaft Kultur Sport" xmlUrl="https://www.tagesschau.de/index~rss2.xml/" />
 			<outline type="rss" title="ZDF heute" text="News aus Deutschland sowie aktuelle Nachrichten aus Europa und aller Welt." xmlUrl="https://www.zdf.de/rss/zdf/nachrichten" />
 			<!-- <outline type="rss" title="Serienjunkies" text="Alle Serien auf serienjunkies.de" xmlUrl="https://www.serienjunkies.de/rss/news.xml" /> -->
 		</outline>

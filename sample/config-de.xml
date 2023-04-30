@@ -17,7 +17,7 @@
   <feed>https://kulturbanause.de/feed/</feed>
   <!-- german news -->
   <feed>https://rss.golem.de/rss.php?feed=ATOM1.0</feed>
-  <feed>https://www.tagesschau.de/xml/rss2/</feed>
+  <feed>https://www.tagesschau.de/index~rss2.xml</feed>
   <feed>https://www.taz.de/rss.xml</feed>
   <feed>https://www.faz.net/rss/aktuell/</feed>
 </config>

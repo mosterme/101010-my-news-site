@@ -165,7 +165,7 @@
 				<!--<outline type="rss" title="Technology" text="Technology" xmlUrl="http://rss.cnn.com/rss/edition_technology.rss" />-->
 				<outline type="rss" title="World" text="World" xmlUrl="http://rss.cnn.com/rss/edition_world.rss" />
 			</outline>		
-			<outline type="rss" title="ARD Tagesschau" text="Aktuelle Nachrichten - Inland Ausland Wirtschaft Kultur Sport" xmlUrl="https://www.tagesschau.de/xml/rss2/" />
+			<outline type="rss" title="ARD Tagesschau" text="Aktuelle Nachrichten - Inland Ausland Wirtschaft Kultur Sport" xmlUrl="https://www.tagesschau.de/index~rss2.xml" />
 			<outline type="rss" title="auslandsjournal" text="Die ZDF-Korrespondenten berichten aus aller Welt." xmlUrl="https://www.zdf.de/rss/zdf/politik/auslandsjournal" />
 			<!--<outline type="rss" title="heute journal" text="Politische Berichte, scharfsinnige Analysen, verständliche Erklärungen." xmlUrl="https://www.zdf.de/rss/zdf/nachrichten/heute-journal" />-->
 			<outline type="rss" title="ZDF heute" text="News aus Deutschland sowie aktuelle Nachrichten aus Europa und aller Welt." xmlUrl="https://www.zdf.de/rss/zdf/nachrichten" />			
