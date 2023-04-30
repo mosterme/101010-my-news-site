@@ -1,8 +1,9 @@
+article{border-width:0 0 0 3px; border-radius:0; padding:4px 0 0 8px}
 body>footer{border-right:3px solid;border-left:3px solid;width:90%;margin:0 auto 10px;padding:2px 0;text-align:center}
 body>header{border:3px solid;width:90%;margin:10px auto 0;border-radius:30px 30px 0 0;text-align:center}
 body>main{border-right:3px solid;border-left:3px solid;width:90%;margin:3px auto;padding:5px 0}
 h1{margin-left:10px;margin-block-start:3px;margin-block-end:3px;padding-bottom:4px} .hi {display:none}
-section{margin:0 auto 10px auto;width:80%}
+section{margin:0 auto 10px auto;width:90%}
 time{margin-block-start:25px;margin-right:25px}
 
 @media only screen and (max-width:900px){
