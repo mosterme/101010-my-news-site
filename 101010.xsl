@@ -3,8 +3,8 @@
 	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes"/>
 	<xsl:variable name="title" select="troll:fallback(//opml/head/title,'101010 - my news site')"/>
 	<xsl:variable name="basic" select="'common.css'"/>
-	<xsl:variable name="home" select="'𝓗'"/> <!-- ℍ 𝓗 ⌂ 🗟 -->
-	<xsl:variable name="feed" select="'𝓕'"/> <!-- 𝔽 𝓕 -->
+	<xsl:variable name="home" select="'🏠'"/> <!-- ℍ 𝓗 ⌂ 🗟 -->
+	<xsl:variable name="feed" select="'🔊'"/> <!-- 𝔽 𝓕 -->
 	<xsl:variable name="wiki" select="'https://github.com/mosterme/101010-my-news-site/wiki'"/>
 	<xsl:variable name="path"  select="troll:fallback(//config/@path,'assets')"/> <!-- path to assets -->
 	<xsl:variable name="icon"  select="troll:fallback(//config/@icon,'📰')"/> <!-- 🌎 🌍 🌏 📰 👓 🛸 🛰️ 🚀 -->
