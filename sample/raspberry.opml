@@ -14,7 +14,6 @@
 			</outline>
 			<outline title="FAZ.NET" text="News, Nachrichten und aktuelle Meldungen aus allen Ressorts. Politik, Wirtschaft, Sport, Feuilleton und Finanzen im Überblick.">
 				<outline type="rss" title="Aktuelle Nachrichten online - FAZ.NET" text="Aktuelle Nachrichten online - FAZ.NET" xmlUrl="https://www.faz.net/rss/aktuell/" />
-				<outline type="rss" title="Fazblog - Blogs der FAZ" text="Fazblog - Blogs der FAZ" xmlUrl="https://blogs.faz.net/feed/" />
 			</outline>
 			<outline type="rss" title="Frankfurter Rundschau" text="Frankfurter Rundschau" xmlUrl="https://www.fr.de/rssfeed.rdf" />
 			<outline type="rss" title="taz. die tageszeitung" text="Kritischer, unabhängiger Journalismus der linken Nachrichtenseite taz: Analysen, Hintergründe, Kommentare, Interviews, Reportagen. Genossenschaft seit 1992." xmlUrl="https://www.taz.de/rss.xml" />
@@ -56,7 +55,6 @@
 			<outline type="rss" title="The GitHub Blog" text="Updates, ideas, and inspiration from GitHub to help developers build and design software." xmlUrl="https://github.blog/feed/" />
 			<outline type="rss" title="Kotaku" text="Gaming Reviews, News, Tips and More." xmlUrl="https://kotaku.com/rss" />
 			<outline type="rss" title="Krebs on Security" text="In-depth security news and investigation" xmlUrl="https://krebsonsecurity.com/feed" />
-			<outline type="rss" title="Linux.com" text="News For Open Source Professionals" xmlUrl="https://www.linux.com/feed/" />
 			<outline type="rss" title="Microsoft Developer Blogs" text="Get the latest information, insights, announcements, and news from Microsoft." xmlUrl="https://devblogs.microsoft.com/landingpage/" />
 			<outline type="rss" title="Netflix TechBlog" text="Learn about Netflix’s world class engineering efforts, company culture, product developments and more." xmlUrl="https://netflixtechblog.com/feed" />
 			<outline type="rss" title="Walmart Tech Blog" text="We’re powering the next great retail disruption." xmlUrl="https://medium.com/feed/walmartglobaltech" />
